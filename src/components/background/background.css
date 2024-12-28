@@ -1,0 +1,34 @@
+
+.back-container {
+	display: flex;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	position: fixed;
+}
+.back-container:before{
+	content: "";
+	height: 100vh;
+	width: 100vw;
+	z-index: -1;
+	background: #2595ff;
+	position: absolute;
+}
+.waterHere {
+	width: 100%;
+	height: 100vh;
+	filter: url("#crumple-effect");
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto;
+	gap: 15px;
+}
+.waterHere div{
+	background: #2575dd;
+	border-radius: 50%;
+}
+.wsvg{
+	position: absolute;
+}

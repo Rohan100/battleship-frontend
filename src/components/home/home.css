@@ -1,0 +1,85 @@
+
+  .name-container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+  }
+  .game-name{
+    font-family: "Press Start 2P", system-ui;
+    text-align: center;
+    position: relative;
+  }
+
+.input-name{
+  width:100%;
+  padding: 8px;
+  font-size: larger;
+  border-radius: 10px;
+  border: 1px solid black;
+  outline: 2px gray;
+}
+  
+  .game-name  p{
+    margin: 0;
+    /* transform: translate(-50%,-50%); */
+    font-weight: bolder;
+    text-align: center;
+    font-size: 50px;
+    background: linear-gradient(#222,#eee,#222);
+    background-clip: text;
+    color: transparent;
+  }
+  .game-name p:nth-child(1){
+    z-index: 2;
+  }
+  .game-name p:nth-child(2){
+    z-index: 1;
+    text-shadow: -3px 1px 0 #222,
+    5px 1px 0 #222,
+    8px 1px 0 #222,
+    -4px 1px 0 #222;
+    top: 0;
+    position: absolute;
+  }
+.setup-container{
+    background: url('../../assests/background.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-size: cover; /* Scale the image to cover the entire div */
+  background-position: center; /* Center the image within the div */
+  background-repeat: no-repeat;
+}
+
+@font-face {
+    font-family: 'Press Start 2p';
+  }
+  
+
+  .start-btn{
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      margin:5px;
+      font-weight: bold;
+      padding: 10px 0 10px 10px ;
+      background-color: lightgray;
+      text-shadow: -1px -1px black, 1px 1px white;
+      color: gray;
+      -webkit-border-radius: 7px;
+      -moz-border-radius: 7px;
+      -o-border-radius: 7px;
+      border-radius: 7px;
+      box-shadow: 0 .2em gray; 
+      cursor: pointer;
+      font-size: 20px;
+  }
+   .start-btn:active {
+      box-shadow: none;
+      position: relative;
+      top: .2em;
+  }
