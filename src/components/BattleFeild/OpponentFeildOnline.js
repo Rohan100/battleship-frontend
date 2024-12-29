@@ -8,7 +8,7 @@ import { ACTION_ATTACK_SHIP,ACTION_ADD_COMPUTER_SHIP } from '../../store/action'
 import { useSocketContext } from '../../store/SocketProvider';
 import TimerCmp from '../common/Timer';
 function OpponentFeildOnline() {
-    const {opponentdestroyedShips,opponentGrids,attack} = useSocketContext()
+    const {opponentdestroyedShips,opponentGrids,attack,winner} = useSocketContext()
     const [time,setTime] = useState(300)
     const {socket} = useSocketContext()
     const timerRef = useRef()
@@ -20,12 +20,12 @@ function OpponentFeildOnline() {
 
         if (!attack) {
             timerRef.current = setInterval(() => {
-                if(time > 0)
+                if(time > 0 && !winner)
                 setTime(prev => prev - 1);
             }, 1000);
             return () => clearInterval(timerRef.current)
         }
-    }, [attack,time])
+    }, [attack,time,winner])
     const handleCellClick = (position) => {
         if(attack)
             if(socket){

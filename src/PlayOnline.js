@@ -53,6 +53,7 @@ function PlayOnline() {
           console.log("timeup")
           let win = socketConnection.id === data.winner ? 'opponent' : socketConnection.id
           dispatch({type:ACTION_WINNER,payload:{winner:win,reason:data.reason}});
+          // socketConnection.disconnect()
       })
         setSocket(socketConnection)
       

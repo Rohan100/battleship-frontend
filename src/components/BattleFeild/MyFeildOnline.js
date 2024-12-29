@@ -8,19 +8,19 @@ import TimerCmp from '../common/Timer';
 
 function MyFiedldOnline() {
     const { myShips } = useAppContext();
-    const { myGrids, attack } = useSocketContext();
+    const { myGrids, attack,winner } = useSocketContext();
     const [time, setTime] = useState(300);
     const timerRef = useRef()
     useEffect(() => {
 
         if (attack) {
             timerRef.current = setInterval(() => {
-                if(time > 0)
+                if(time > 0 && !winner)
                 setTime(prev => prev - 1);
             }, 1000);
             return () => clearInterval(timerRef.current)
         }
-    }, [attack,time])
+    }, [attack,time,winner])
     return (
         <div className='md:w-11/12 flex flex-col items-center justify-center w-full'>
             <TimerCmp time={time}/>
