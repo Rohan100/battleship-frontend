@@ -56,7 +56,7 @@ function Setup() {
 
   return (
     <div className='w-full flex flex-col items-center justify-center'>
-      <h2 className='text-3xl' onClick={() => setAxis(prev => prev == X_AXIS ? Y_AXIS : X_AXIS)} >Change Axis</h2>
+      <button className='text-2xl border border-black hover:shadow bg-gray-700 text-white  rounded p-2 m-2 uppercase' onClick={() => setAxis(prev => prev == X_AXIS ? Y_AXIS : X_AXIS)} >Change Axis {axis}</button>
       <div style={{ position: 'relative' }}>
         <Board isbackground={false}>
           {Array.from(Array(100).keys())
